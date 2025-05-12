@@ -3,28 +3,28 @@
 // THEME PALETTE 10 indigo-coolGrey ==========================================
 :root {
   // PRIMARY COLOR
-  --c-primary-50: 238, 242, 255;
-  --c-primary-100: 224, 231, 255;
-  --c-primary-200: 199, 210, 254;
-  --c-primary-300: 165, 180, 252;
-  --c-primary-400: 129, 140, 248;
-  --c-primary-500: 99, 102, 241;
-  --c-primary-600: 79, 70, 229;
-  --c-primary-700: 67, 56, 202;
-  --c-primary-800: 55, 48, 163;
-  --c-primary-900: 49, 46, 129;
+  --c-primary-50: 255, 247, 200;  // Very light gold
+  --c-primary-100: 255, 239, 153; // Light gold
+  --c-primary-200: 255, 231, 102; // Lighter gold
+  --c-primary-300: 255, 223, 51;  // Medium gold
+  --c-primary-400: 255, 219, 25;  // Bright gold
+  --c-primary-500: 255, 215, 0;   // Base gold
+  --c-primary-600: 255, 215, 0;   // Base gold (unchanged)
+  --c-primary-700: 204, 172, 0;   // Dark gold
+  --c-primary-800: 153, 129, 0;   // Darker gold
+  --c-primary-900: 102, 86, 0;    // Very dark gold
 
   // SECONDARY COLOR
-  --c-secondary-50: 240, 253, 250;
-  --c-secondary-100: 204, 251, 241;
-  --c-secondary-200: 153, 246, 228;
-  --c-secondary-300: 153, 246, 228;
-  --c-secondary-400: 45, 212, 191;
-  --c-secondary-500: 20, 184, 166;
-  --c-secondary-600: 13, 148, 136;
-  --c-secondary-700: 15, 118, 110;
-  --c-secondary-800: 17, 94, 89;
-  --c-secondary-900: 19, 78, 74;
+  --c-secondary-50: 245, 245, 245;   // Very light gray
+  --c-secondary-100: 230, 230, 230; // Light gray
+  --c-secondary-200: 204, 204, 204; // Lighter gray
+  --c-secondary-300: 179, 179, 179; // Medium gray
+  --c-secondary-400: 128, 128, 128; // Neutral gray
+  --c-secondary-500: 77, 77, 77;    // Dark gray
+  --c-secondary-600: 51, 51, 51;    // Darker gray
+  --c-secondary-700: 38, 38, 38;    // Very dark gray
+  --c-secondary-800: 26, 26, 26;    // Almost black
+  --c-secondary-900: 0, 0, 0;       // Pure black
 
   // NEUTRAL COLOR
   --c-neutral-50: 249, 250, 251;
