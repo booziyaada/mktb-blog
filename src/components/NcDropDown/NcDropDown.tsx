@@ -1,7 +1,7 @@
 'use client'
 
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid'
-import React, { FC, Fragment, ReactNode } from 'react'
+import React, { FC, Fragment, ReactNode, type JSX } from 'react';
 import {
 	Menu,
 	MenuButton,

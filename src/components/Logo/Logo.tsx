@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import logoImg from '/public/logo.png'
 
 export interface LogoProps {}
 
@@ -12,11 +11,10 @@ const Logo: React.FC<LogoProps> = () => {
 			className="ttnc-logo inline-block flex-shrink-0 text-primary-6000"
 		>
 			<Image
-				src={logoImg}
+				src="/logo.png"
 				alt="Logo"
-				// fill
-				// width={40}
-				// height={40}
+				width={40}
+				height={40}
 				className="h-10 w-10 rounded-full object-cover"
 			/>
 		</Link>
