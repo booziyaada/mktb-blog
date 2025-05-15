@@ -2,7 +2,7 @@
 
 import React, {
   FC,
-  LegacyRef,
+  Ref,
   useRef,
   useState,
   ChangeEvent,
@@ -18,7 +18,7 @@ import { useMusicPlayer } from "@/hooks/useMusicPlayer";
 export interface MusicPlayerProps {}
 
 const MusicPlayer: FC<MusicPlayerProps> = ({}) => {
-  const playerRef: LegacyRef<ReactFilePlayer> | undefined = useRef(null);
+  const playerRef: Ref<ReactFilePlayer> | undefined = useRef(null);
 
   const {
     duration,
