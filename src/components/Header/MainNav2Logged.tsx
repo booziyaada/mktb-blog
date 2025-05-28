@@ -27,7 +27,7 @@ const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
 				</div>
 
 				<div className="flex flex-1 items-center justify-end text-slate-700 dark:text-slate-100">
-					<SearchModal />
+					{/* <SearchModal /> */}
 					<NotifyDropdown />
 					{/* <AvatarDropdown /> */}
 				</div>
