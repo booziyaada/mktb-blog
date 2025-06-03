@@ -26,7 +26,7 @@ import SectionLatestPosts from '@/components/Sections/SectionLatestPosts'
 import SectionMagazine2 from '@/components/Sections/SectionMagazine2'
 import axios from '@/utils/axios'
 import { AxiosResponse } from 'axios'
-import { Article, PostDataType } from '@/data/types'
+import { Article, Person, PostAuthorType, PostDataType } from '@/data/types'
 
 //
 const MAGAZINE1_POSTS = DEMO_POSTS.filter((_, i) => i >= 8 && i < 16)
@@ -35,6 +35,7 @@ const MAGAZINE2_POSTS = DEMO_POSTS.filter((_, i) => i >= 0 && i < 7)
 
 export default async function Page() {
 	const articles = (await axios.get<Article[]>('articles')).data
+	const persons = (await axios.get<Person[]>('persons')).data
 
 	const posts = articles.splice(0, 5).map<PostDataType>((article) => {
 		return {
@@ -44,6 +45,13 @@ export default async function Page() {
 				href: `/author/${article.author._id}`,
 			},
 			href: `/single/${article._id}`,
+		}
+	})
+
+	const authors = persons.map<PostAuthorType>((person) => {
+		return {
+			...person,
+			href: `/author/${person._id}`,
 		}
 	})
 
@@ -58,9 +66,9 @@ export default async function Page() {
 				<div className="relative py-16">
 					<BackgroundSection />
 					<SectionSliderNewAuthors
-						heading="Newest authors"
-						subHeading="Say hello to future creator potentials"
-						authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
+						heading="உலமாக்கள்"
+						subHeading="بَلْ هُوَ آيَاتٌ بَيِّنَاتٌ فِي صُدُورِ الَّذِينَ أُوتُوا الْعِلْمَ"
+						authors={authors.filter((_, i) => i < 10)}
 					/>
 				</div>
 
@@ -121,7 +129,7 @@ export default async function Page() {
 
 				<SectionGridAuthorBox
 					className="py-16 lg:py-28"
-					authors={DEMO_AUTHORS.filter((_, i) => i < 10)}
+					authors={authors.filter((_, i) => i < 10)}
 				/>
 
 				<div className="relative py-16">
