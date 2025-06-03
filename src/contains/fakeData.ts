@@ -1,4 +1,4 @@
-import avatar1 from '@/data/avatars/1.jpg'
+import avatar1 from '@/data/avatars/quill-ink.svg'
 
 export const avatarImgs = [
 	avatar1,
@@ -51,13 +51,24 @@ const tagNames = [
 	'Androind',
 ]
 
-const featuredImgs = [
-	'', '', '', '', '', '', '', '', '', '', '', '', '', '',
-];
+const featuredImgs = ['', '', '', '', '', '', '', '', '', '', '', '', '', '']
 
 export const imgHigtQualitys = [
-	'', '', '', '', '', '', '', '', '', '', '', '', '', '',
-];
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+]
 
 const aTitles = [
 	'adipiscing bibendum est ultricies integer quis auctor elit sed vulputate',

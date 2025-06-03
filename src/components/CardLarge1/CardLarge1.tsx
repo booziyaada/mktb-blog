@@ -48,10 +48,10 @@ const CardLarge1: FC<CardLarge1Props> = ({
 
 					<CardAuthor2 className="relative" author={author} createdAt={date} />
 
-					<div className="mt-auto flex items-center justify-between">
+					{/* <div className="mt-auto flex items-center justify-between">
 						<PostCardLikeAndComment />
 						<PostCardSaveAction bookmarkClass="h-8 w-8 bg-neutral-50/30 hover:bg-neutral-50/50 dark:bg-neutral-800/30 dark:hover:bg-neutral-800/50" />
-					</div>
+					</div> */}
 				</div>
 				<div className="p-4 sm:px-10 sm:pt-8">
 					<NextPrev

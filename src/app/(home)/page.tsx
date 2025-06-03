@@ -36,7 +36,7 @@ const MAGAZINE2_POSTS = DEMO_POSTS.filter((_, i) => i >= 0 && i < 7)
 export default async function Page() {
 	const articles = (await axios.get<Article[]>('articles')).data
 
-	const posts = articles.map<PostDataType>((article) => {
+	const posts = articles.splice(0, 5).map<PostDataType>((article) => {
 		return {
 			...article,
 			author: {
