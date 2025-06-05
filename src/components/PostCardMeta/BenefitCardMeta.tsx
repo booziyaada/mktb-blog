@@ -1,17 +1,17 @@
 import React, { FC } from 'react'
 import Avatar from '@/components/Avatar/Avatar'
-import { PostDataType } from '@/data/types'
+import { IBenefitCard, PostDataType } from '@/data/types'
 import Link from 'next/link'
 
-export interface PostCardMetaV2Props {
-	meta: Pick<PostDataType, 'date' | 'author' | 'title' | 'href'>
+export interface BenefitCardMetaProps {
+	meta: Pick<IBenefitCard, 'createdAt' | 'author' | 'title' | 'href'>
 	hiddenAvatar?: boolean
 	className?: string
 	titleClassName?: string
 	avatarSize?: string
 }
 
-const PostCardMetaV2: FC<PostCardMetaV2Props> = ({
+const BenefitCardMeta: FC<BenefitCardMetaProps> = ({
 	meta,
 	hiddenAvatar = false,
 	className = 'leading-none text-xs',
@@ -28,7 +28,7 @@ const PostCardMetaV2: FC<PostCardMetaV2Props> = ({
 					<Avatar
 						radius="rounded-full"
 						sizeClass={avatarSize}
-						imgUrl={author.avatar}
+						// imgUrl={author.avatar}
 						userName={author.name}
 					/>
 				)}
@@ -56,4 +56,4 @@ const PostCardMetaV2: FC<PostCardMetaV2Props> = ({
 	)
 }
 
-export default PostCardMetaV2
+export default BenefitCardMeta

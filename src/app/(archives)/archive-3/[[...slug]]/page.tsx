@@ -12,7 +12,7 @@ import BackgroundSection from '@/components/BackgroundSection/BackgroundSection'
 import SectionGridCategoryBox from '@/components/SectionGridCategoryBox/SectionGridCategoryBox'
 import ButtonSecondary from '@/components/Button/ButtonSecondary'
 import SectionSliderNewAuthors from '@/components/SectionSliderNewAthors/SectionSliderNewAuthors'
-import Card10V2 from '@/components/Card10/Card10V2'
+import BenefitCard from '@/components/Card10/BenefitCard'
 
 const PageArchiveVideo = ({}) => {
 	const FILTERS = [
@@ -47,7 +47,7 @@ const PageArchiveVideo = ({}) => {
 					{/* LOOP ITEMS */}
 					<div className="mt-8 grid gap-x-6 gap-y-8 sm:grid-cols-2 md:gap-x-8 md:gap-y-10 lg:mt-10 lg:grid-cols-3">
 						{DEMO_POSTS_VIDEO.map((post) => (
-							<Card10V2 key={post._id} post={post} />
+							<BenefitCard key={post._id} post={post} />
 						))}
 					</div>
 

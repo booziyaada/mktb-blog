@@ -62,6 +62,16 @@ export interface Article extends Post {
 	_content: Object
 }
 
+export interface Benefit extends Post {
+	content: string
+	arContent?: string
+	source: string
+}
+
+export interface IBenefitCard extends Benefit {
+	href: Route
+}
+
 export interface PostDataType extends Post {
 	href: Route
 	// categories: TaxonomyType[]

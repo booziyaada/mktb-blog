@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from 'react'
 import Card3 from '@/components/Card3/Card3'
 import Heading from '@/components/Heading/Heading'
 import { DEMO_POSTS } from '@/data/posts'
-import { PostDataType } from '@/data/types'
+import { IBenefitCard, PostDataType } from '@/data/types'
 import ButtonPrimary from '@/components/Button/ButtonPrimary'
 import Card4 from '@/components/Card4/Card4'
 import Card7 from '@/components/Card7/Card7'
@@ -10,7 +10,7 @@ import Card9 from '@/components/Card9/Card9'
 import Card10 from '@/components/Card10/Card10'
 import Card11 from '@/components/Card11/Card11'
 import Card14 from '@/components/Card14/Card14'
-import Card10V2 from '@/components/Card10/Card10V2'
+import BenefitCard from '@/components/Card10/BenefitCard'
 import Card15Podcast from '@/components/Card15Podcast/Card15Podcast'
 
 // OTHER DEMO WILL PASS PROPS
@@ -18,7 +18,7 @@ const postsDemo: PostDataType[] = DEMO_POSTS.filter((_, i) => i > 7 && i < 17)
 
 //
 export interface SectionGridPostsProps {
-	posts?: PostDataType[]
+	posts?: IBenefitCard[] | PostDataType[]
 	className?: string
 	gridClass?: string
 	heading?: ReactNode
@@ -66,7 +66,7 @@ const SectionGridPosts: FC<SectionGridPostsProps> = ({
 			case 'card10':
 				return <Card10 key={post._id} post={post} />
 			case 'card10V2':
-				return <Card10V2 key={post._id} post={post} />
+				return <BenefitCard key={post._id} post={post as IBenefitCard} />
 			case 'card11':
 				return <Card11 key={post._id} post={post} />
 			case 'card14':

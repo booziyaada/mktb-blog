@@ -26,7 +26,14 @@ import SectionLatestPosts from '@/components/Sections/SectionLatestPosts'
 import SectionMagazine2 from '@/components/Sections/SectionMagazine2'
 import axios from '@/utils/axios'
 import { AxiosResponse } from 'axios'
-import { Article, Person, PostAuthorType, PostDataType } from '@/data/types'
+import {
+	Article,
+	Benefit,
+	IBenefitCard,
+	Person,
+	PostAuthorType,
+	PostDataType,
+} from '@/data/types'
 
 //
 const MAGAZINE1_POSTS = DEMO_POSTS.filter((_, i) => i >= 8 && i < 16)
@@ -34,10 +41,11 @@ const MAGAZINE2_POSTS = DEMO_POSTS.filter((_, i) => i >= 0 && i < 7)
 //
 
 export default async function Page() {
-	const articles = (await axios.get<Article[]>('articles')).data
+	const articlesData = (await axios.get<Article[]>('articles')).data
+	const benefitsData = (await axios.get<Benefit[]>('benefits')).data
 	const persons = (await axios.get<Person[]>('persons')).data
 
-	const posts = articles.splice(0, 5).map<PostDataType>((article) => {
+	const articles = articlesData.splice(0, 5).map<PostDataType>((article) => {
 		return {
 			...article,
 			author: {
@@ -45,6 +53,17 @@ export default async function Page() {
 				href: `/author/${article.author._id}`,
 			},
 			href: `/single/${article._id}`,
+		}
+	})
+
+	const benefits = benefitsData.splice(0, 8).map<IBenefitCard>((benefit) => {
+		return {
+			...benefit,
+			author: {
+				...benefit.author,
+				href: `/author/${benefit.author._id}`,
+			},
+			href: `/single/${benefit._id}`,
 		}
 	})
 
@@ -60,7 +79,7 @@ export default async function Page() {
 			<div className="container relative">
 				<SectionLargeSlider
 					className="pb-16 pt-10 md:py-16 lg:pb-28 lg:pt-20"
-					posts={posts}
+					posts={articles}
 				/>
 
 				<div className="relative py-16">
@@ -90,7 +109,7 @@ export default async function Page() {
 					/>
 				</div> */}
 
-				<SectionMagazine1 className="py-16 lg:py-28" posts={posts} />
+				<SectionMagazine1 className="py-16 lg:py-28" posts={articles} />
 
 				{/* <SectionAds /> */}
 
@@ -106,9 +125,9 @@ export default async function Page() {
 						className="py-16 lg:py-28"
 						headingIsCenter
 						postCardName="card10V2"
-						heading="Explore latest video articles"
-						subHeading="Hover on the post card and preview video 🥡"
-						posts={DEMO_POSTS_VIDEO.filter((_, i) => i > 5 && i < 12)}
+						heading="பலன்கள்"
+						subHeading="وَهُزِّي إِلَيْكِ بِجِذْعِ النَّخْلَةِ تُسَاقِطْ عَلَيْكِ رُطَبًا جَنِيًّا"
+						posts={benefits}
 						gridClass="md:grid-cols-2 lg:grid-cols-3"
 					/>
 				</div>
