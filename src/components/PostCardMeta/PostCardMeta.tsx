@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export interface PostCardMetaProps {
 	className?: string
-	meta: Pick<PostDataType, 'date' | 'author'>
+	meta: Pick<PostDataType, 'createdAt' | 'author'>
 	hiddenAvatar?: boolean
 	avatarSize?: string
 }
@@ -30,7 +30,7 @@ const PostCardMeta: FC<PostCardMetaProps> = ({
 					<Avatar
 						radius="rounded-full"
 						sizeClass={avatarSize}
-						imgUrl={author.avatar}
+						// imgUrl={author.avatar}
 						userName={author.name}
 					/>
 				)}

@@ -14,6 +14,17 @@ export interface Card2Props {
 	size?: 'normal' | 'large'
 }
 
+export const getRandomFeaturedImage = () => {
+	const imgs = [
+		'article-pic-1.jpg',
+		'article-pic-2.jpg',
+		'article-pic-3.jpg',
+		'article-pic-4.jpg',
+		'article-pic-5.jpg',
+	]
+	return imgs[Math.floor(Math.random() * imgs.length)]
+}
+
 const Card2: FC<Card2Props> = ({
 	className = 'h-full',
 	size = 'normal',
@@ -22,10 +33,10 @@ const Card2: FC<Card2Props> = ({
 	const {
 		title,
 		href,
-		readingTime,
-		featuredImage,
+		// readingTime,
+		// featuredImage,
 		desc,
-		categories,
+		// categories,
 		type: postType,
 	} = post
 
@@ -36,7 +47,8 @@ const Card2: FC<Card2Props> = ({
 					fill
 					sizes="(max-width: 600px) 480px, 800px"
 					className="rounded-3xl object-cover"
-					src={featuredImage}
+					// src={featuredImage}
+					src={`/${getRandomFeaturedImage()}`}
 					alt={title}
 				/>
 				<PostTypeFeaturedIcon
@@ -45,11 +57,11 @@ const Card2: FC<Card2Props> = ({
 					wrapSize="w-8 h-8"
 					iconSize="w-4 h-4"
 				/>
-				<CategoryBadgeList
+				{/* <CategoryBadgeList
 					className="absolute left-3 top-3 flex flex-wrap space-x-2"
 					itemClass="relative"
 					categories={categories}
-				/>
+				/> */}
 			</div>
 
 			<Link href={href} className="absolute inset-0" />
@@ -78,10 +90,10 @@ const Card2: FC<Card2Props> = ({
 					</span>
 				</div>
 				<div className="my-5 border-t border-neutral-200 dark:border-neutral-700"></div>
-				<div className="flex items-center justify-between">
+				{/* <div className="flex items-center justify-between">
 					<PostCardLikeAndComment className="relative" />
 					<PostCardSaveAction className="relative" readingTime={readingTime} />
-				</div>
+				</div> */}
 			</div>
 		</div>
 	)

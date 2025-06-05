@@ -72,15 +72,15 @@ export default async function Page() {
 					/>
 				</div>
 
-				<SectionSliderNewCategories
+				{/* <SectionSliderNewCategories
 					className="py-16 lg:py-28"
 					heading="Top trending topics"
 					subHeading="Discover 233 topics"
 					categories={DEMO_CATEGORIES.filter((_, i) => i < 10)}
 					categoryCardType="card4"
-				/>
+				/> */}
 
-				<div className="relative py-16">
+				{/* <div className="relative py-16">
 					<BackgroundSection />
 					<SectionSliderPosts
 						postCardName="card9"
@@ -88,16 +88,16 @@ export default async function Page() {
 						subHeading="Click on the icon to enjoy the music or podcast 🎧"
 						posts={DEMO_POSTS_AUDIO.filter((_, i) => i > 3 && i < 10)}
 					/>
-				</div>
+				</div> */}
 
-				<SectionMagazine1 className="py-16 lg:py-28" posts={MAGAZINE1_POSTS} />
+				<SectionMagazine1 className="py-16 lg:py-28" posts={posts} />
 
-				<SectionAds />
+				{/* <SectionAds /> */}
 
-				<SectionMagazine7
+				{/* <SectionMagazine7
 					className="py-16 lg:py-28"
 					posts={DEMO_POSTS_GALLERY.filter((_, i) => i < 6)}
-				/>
+				/> */}
 			</div>
 
 			<div className="dark bg-neutral-900 text-neutral-100 dark:bg-black dark:bg-opacity-20">
@@ -114,7 +114,7 @@ export default async function Page() {
 				</div>
 			</div>
 
-			<div className="container">
+			{/* <div className="container">
 				<SectionMagazine8
 					className="py-16 lg:py-28"
 					posts={DEMO_POSTS_AUDIO.filter((_, i) => i < 6)}
@@ -160,7 +160,7 @@ export default async function Page() {
 				<SectionVideos className="py-16 lg:py-28" />
 
 				<SectionLatestPosts className="pb-16 lg:pb-28" />
-			</div>
+			</div> */}
 		</div>
 	)
 }

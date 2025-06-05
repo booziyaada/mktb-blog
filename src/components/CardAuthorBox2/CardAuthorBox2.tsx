@@ -29,14 +29,14 @@ const CardAuthorBox2: FC<CardAuthorBox2Props> = ({
 		>
 			<div className="relative flex-shrink-0">
 				<div>
-					{/* <NcImage
+					<NcImage
 						alt="author"
 						containerClassName="flex aspect-w-7 aspect-h-5 w-full h-0"
 						// src={bgImage || ''}
-						src={''}
+						src={'/books.jpg'}
 						fill
 						sizes="(max-width: 600px) 480px, 33vw"
-					/> */}
+					/>
 				</div>
 				{/* <div className="absolute inset-x-3 top-3 flex">
 					<div className="flex items-center justify-center rounded-full bg-neutral-100 px-4 py-1 text-xs font-medium leading-none dark:bg-neutral-800">
