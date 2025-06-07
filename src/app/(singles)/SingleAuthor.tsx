@@ -14,7 +14,7 @@ const SingleAuthor: FC<SingleAuthorProps> = ({ author = DEMO_AUTHORS[1] }) => {
 			<Link href={author.href}>
 				<Avatar
 					imgUrl={author.avatar}
-					userName={author.displayName}
+					userName={author.name}
 					sizeClass="h-12 w-12 text-lg sm:text-xl sm:h-24 sm:w-24"
 				/>
 			</Link>
@@ -23,10 +23,10 @@ const SingleAuthor: FC<SingleAuthorProps> = ({ author = DEMO_AUTHORS[1] }) => {
 					WRITTEN BY
 				</span>
 				<h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-200">
-					<Link href={author.href}>{author.displayName}</Link>
+					<Link href={author.href}>{author.name}</Link>
 				</h2>
 				<span className="mt-1 block text-sm text-neutral-500 dark:text-neutral-300 sm:text-base">
-					{author.desc}
+					{author.bio}
 					<Link
 						className="ml-1 font-medium text-primary-6000"
 						href={author.href}

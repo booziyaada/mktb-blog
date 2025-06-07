@@ -22,7 +22,7 @@ const ModalHideAuthor: FC<ModalHideAuthorProps> = ({
 	const textareaRef = useRef(null)
 
 	const handleClickSubmitForm = () => {
-		console.log({ auhthor: auhthor.id })
+		console.log({ auhthor: auhthor._id })
 	}
 
 	useEffect(() => {
@@ -40,11 +40,11 @@ const ModalHideAuthor: FC<ModalHideAuthorProps> = ({
 		return (
 			<form action="#">
 				<h3 className="text-lg font-semibold">
-					Hide stories from {auhthor.displayName}
+					Hide stories from {auhthor.name}
 				</h3>
 				<span className="text-sm">
-					We will hide all articles from <strong>{auhthor.displayName}</strong>.
-					You will no longer see their articles?
+					We will hide all articles from <strong>{auhthor.name}</strong>. You
+					will no longer see their articles?
 				</span>
 				<div className="mt-4 space-x-3">
 					<ButtonPrimary

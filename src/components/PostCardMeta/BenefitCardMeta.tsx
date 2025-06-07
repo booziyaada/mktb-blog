@@ -1,0 +1,59 @@
+import React, { FC } from 'react'
+import Avatar from '@/components/Avatar/Avatar'
+import { IBenefitCard, PostDataType } from '@/data/types'
+import Link from 'next/link'
+
+export interface BenefitCardMetaProps {
+	meta: Pick<IBenefitCard, 'createdAt' | 'author' | 'title' | 'href'>
+	hiddenAvatar?: boolean
+	className?: string
+	titleClassName?: string
+	avatarSize?: string
+}
+
+const BenefitCardMeta: FC<BenefitCardMetaProps> = ({
+	meta,
+	hiddenAvatar = false,
+	className = 'leading-none text-xs',
+	titleClassName = 'text-base',
+	avatarSize = 'h-9 w-9 text-base',
+}) => {
+	const { createdAt: date, author, title } = meta
+	return (
+		<div
+			className={`nc-PostCardMetaV2 inline-flex flex-wrap items-center text-neutral-800 dark:text-neutral-200 ${className}`}
+		>
+			<div className="relative flex items-center space-x-2 rtl:space-x-reverse">
+				{!hiddenAvatar && (
+					<Avatar
+						radius="rounded-full"
+						sizeClass={avatarSize}
+						// imgUrl={author.avatar}
+						userName={author.name}
+					/>
+				)}
+				<div>
+					<h2 className={`block font-semibold ${titleClassName}`}>
+						<Link href={meta.href} className="line-clamp-1">
+							{title}
+						</Link>
+					</h2>
+
+					<Link href={author.href} className="mt-1.5 flex">
+						<span className="block font-medium text-neutral-700 hover:text-black dark:text-neutral-300 dark:hover:text-white">
+							{author.name}
+						</span>
+						<span className="mx-[6px] font-medium text-neutral-500 dark:text-neutral-400">
+							·
+						</span>
+						<span className="font-normal text-neutral-500 dark:text-neutral-400">
+							{date}
+						</span>
+					</Link>
+				</div>
+			</div>
+		</div>
+	)
+}
+
+export default BenefitCardMeta

@@ -169,7 +169,7 @@ const PageSearch = ({}) => {
 					{tabActive === 'Articles' && (
 						<div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-8 lg:mt-10 lg:grid-cols-3 xl:grid-cols-4">
 							{posts.map((post) => (
-								<Card11 key={post.id} post={post} />
+								<Card11 key={post._id} post={post} />
 							))}
 						</div>
 					)}
@@ -193,7 +193,7 @@ const PageSearch = ({}) => {
 					{tabActive === 'Authors' && (
 						<div className="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 md:gap-8 lg:mt-10 lg:grid-cols-4 xl:grid-cols-5">
 							{authors.map((author) => (
-								<CardAuthorBox2 key={author.id} author={author} />
+								<CardAuthorBox2 key={author._id} author={author} />
 							))}
 						</div>
 					)}

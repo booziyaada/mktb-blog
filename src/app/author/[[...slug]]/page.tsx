@@ -152,7 +152,7 @@ const PageAuthor = ({}) => {
 					{/* LOOP ITEMS */}
 					<div className="mt-8 grid gap-6 sm:grid-cols-2 md:gap-8 lg:mt-10 lg:grid-cols-3 xl:grid-cols-4">
 						{posts.map((post) => (
-							<Card11 key={post.id} post={post} />
+							<Card11 key={post._id} post={post} />
 						))}
 					</div>
 

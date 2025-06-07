@@ -66,9 +66,7 @@ const SearchModal: FC<Props> = ({ renderTrigger }) => {
 			? authors
 			: query === '' || rawQuery.startsWith('#')
 				? []
-				: authors.filter((user) =>
-						user.displayName.toLowerCase().includes(query),
-					)
+				: authors.filter((user) => user.name.toLowerCase().includes(query))
 
 	return (
 		<>
@@ -179,7 +177,7 @@ const SearchModal: FC<Props> = ({ renderTrigger }) => {
 													<ul className="-mx-4 mt-2 text-sm text-gray-700">
 														{filteredPosts.map((post) => (
 															<ComboboxOption
-																key={post.id}
+																key={post._id}
 																value={post}
 																className={({ focus: active }) =>
 																	classNames(
@@ -253,7 +251,7 @@ const SearchModal: FC<Props> = ({ renderTrigger }) => {
 													<ul className="-mx-4 mt-2 text-sm text-gray-700">
 														{filteredUsers.map((user) => (
 															<ComboboxOption
-																key={user.id}
+																key={user._id}
 																value={user}
 																className={({ focus: active }) =>
 																	classNames(
@@ -262,14 +260,14 @@ const SearchModal: FC<Props> = ({ renderTrigger }) => {
 																	)
 																}
 															>
-																<Image
+																{/* <Image
 																	src={user.avatar}
 																	alt="author"
 																	className="h-6 w-6 flex-none rounded-full"
 																	sizes="30px"
-																/>
+																/> */}
 																<span className="ms-3 flex-auto truncate">
-																	{user.displayName}
+																	{user.name}
 																</span>
 															</ComboboxOption>
 														))}
